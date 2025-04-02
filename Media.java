@@ -10,8 +10,13 @@ public class Media extends Content{
     public boolean equals(Content other){
         if(!(other instanceof Media))
             return false;
-        Question otherMedia= (Media) other;
+        Media otherMedia = (Media) other;
 
+        if(!this.images.equals(otherMedia.getImages()))
+            return false;
+
+            if(!this.vides.equals(otherMedia.getVideos()))
+            return false;
 
         return true;
     }
