@@ -8,7 +8,7 @@ public class Question extends Content{
     private double points;
 
     private Question(double points, int correctAnswer, LinkedList<String> answers, String prompt){
-	super(prompt);
+	    super(prompt);
         this.points = points;
         this.correctAnswer = correctAnswer;
         this.setAnswers(answers);
@@ -64,6 +64,6 @@ public class Question extends Content{
     }
 
     public boolean isCorrect(String answer){
-        return answer == answers.get(correctAnswer);
+        return answer.equals(answers.get(correctAnswer));
     }
 }

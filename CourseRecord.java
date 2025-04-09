@@ -7,6 +7,16 @@ public class CourseRecord {
     private int date;
     private String role;
 
+    //Default constructor
+    public CourseRecord() {
+        courseName = "Course Name";
+        score = 0.0;
+        progress = 0;
+        pass = false;
+        date = 0;
+        role = "Learner";
+    }
+
     //constructor
     public CourseRecord(String courseName, double score, int progress, boolean pass, int date, String role) {
         this.courseName = courseName;
