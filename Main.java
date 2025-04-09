@@ -1,13 +1,10 @@
 import java.util.LinkedList;
 
 public class Main {    
-    private static Authenticator auth;
     private String currentUser;
     private String currentRole;
 
     public static void main(String[] args) {        
-        // Initialize the Authenticator
-        auth = new Authenticator();
         
     }  
     
