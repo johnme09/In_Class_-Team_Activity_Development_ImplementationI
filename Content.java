@@ -1,11 +1,15 @@
 public abstract class Content {
     private String prompt;
 
-    String getPrompt(){
+    public Content(String prompt){
+	this.prompt = prompt;
+    }
+
+    public String getPrompt(){
         return this.prompt;
     }
 
-    void setPrompt(String prompt){
+    public void setPrompt(String prompt){
         this.prompt = prompt;
     }
 }

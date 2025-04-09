@@ -7,7 +7,8 @@ public class Question extends Content{
     private int correctAnswer;
     private double points;
 
-    private Question(double points, int correctAnswer, LinkedList<String> answers){
+    private Question(double points, int correctAnswer, LinkedList<String> answers, String prompt){
+	super(prompt);
         this.points = points;
         this.correctAnswer = correctAnswer;
         this.setAnswers(answers);
@@ -24,21 +25,21 @@ public class Question extends Content{
         return true;
     }
 
-    public static Question createMCQuestion(double points, int correctAnswer, LinkedList<String> answers){
-        return new Question(points, correctAnswer, answers);
+    public static Question createMCQuestion(double points, int correctAnswer, LinkedList<String> answers, String prompt){
+        return new Question(points, correctAnswer, answers, prompt);
     }
 
-    public static Question createMCQuestion(double points, String correctAnswer, LinkedList<String> answers){
-        return new Question(points, answers.indexOf(correctAnswer), answers);
+    public static Question createMCQuestion(double points, String correctAnswer, LinkedList<String> answers, String prompt){
+        return new Question(points, answers.indexOf(correctAnswer), answers, prompt);
     }
 
-    public static Question createTFQuestion(double points, int correctAnswer){
+    public static Question createTFQuestion(double points, int correctAnswer, String prompt){
         LinkedList<String> answers = new LinkedList<String>(Arrays.asList("True", "False"));
-        return new Question(points, correctAnswer, answers);
+        return new Question(points, correctAnswer, answers, prompt);
     }
 
-    public static Question createTFQuestion(double points, boolean correctAnswer){
-        return createTFQuestion(points, correctAnswer?0:1);
+    public static Question createTFQuestion(double points, boolean correctAnswer, String prompt){
+        return createTFQuestion(points, correctAnswer?0:1, prompt);
     }
 
     public double getPoints(){
